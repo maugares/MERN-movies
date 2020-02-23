@@ -8,7 +8,5 @@ router.post('/movie', createMovie)
 router.get('/movies', getMovies)
 router.put('/movie/:id', updateMovie)
 router.delete('/movie/:id', deleteMovie)
-router.get('/movie/:id', getMovieById)  // this.setState({
-      //   movies: movies.data.data,
-      //   isLoading: false
+router.get('/movie/:id', getMovieById)
     
