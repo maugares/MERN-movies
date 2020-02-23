@@ -26,16 +26,16 @@ export const createMovie = (req, res, err) => {
         message: 'Movie created!'
       })
     })
-    .catch(error => {
+    .catch(err => {
       return res.status(400).json({
-        error,
+        err,
         message: 'Movie not created!'
       })
     })
 }
 
-// cRud - Read
-export const readMovie = async (req, res) => {
+// cRud - Read / Get
+export const getMovie = async (req, res) => {
   await Movie.find({}, (err, movies) => {
     if (err) {
       return res.status(400).json({ success: false, error: err })
@@ -44,7 +44,20 @@ export const readMovie = async (req, res) => {
       return res.status(404).json({ success: false, error: 'Movies not found' })
     }
     return res.status(200).json({ success: true, data: movies })
-  }).catch(err => console.log(err))
+  }).catch(err => console.error(err))
+}
+
+export const getMovieById = async (req, res) => {
+  await Movie.findOne({ _id: req.params.id }, (err, movie) => {
+    if (err) {
+      return res.status(400).json({ success: false, error: err })
+    }
+
+    if (!movie) {
+      return res.status(404).json({ success: false, error: 'Movie not found' })
+    }
+    return res.status(200).json({ success: true, data: movie })
+  }).catch(err => console.error(err))
 }
 
 // crUd - Update
@@ -77,10 +90,10 @@ export const updateMovie = async (req, res, err) => {
           message: 'Movie updated!'
         })
       })
-      .catch(err => {
+      .catch(error => {
         return res.status(404).json({
-          err,
-          message: 'Movie not updated'
+          error,
+          message: 'Movie not updated!'
         })
       })
   })
