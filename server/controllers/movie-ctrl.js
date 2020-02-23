@@ -1,6 +1,6 @@
 import Movie from '../models/movie-model'
 
-const createMovie = (req, res, err) => {
+export const createMovie = (req, res, err) => {
   const body = req.body
 
   if (!body) {
