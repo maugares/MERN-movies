@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js | pino-pretty -m message",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -r esm index.js | pino-pretty -m message",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "mongoose": "^5.9.2"
   },

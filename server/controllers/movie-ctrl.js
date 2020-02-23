@@ -1,4 +1,4 @@
-const Movie = require('../models/movie-model')
+import Movie from '../models/movie-model'
 
 const createMovie = (req, res, err) => {
   const body = req.body

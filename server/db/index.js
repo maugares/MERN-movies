@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const mongodbGateway = 'mongodb://127.0.0.1:27017'
 const dbName = 'cinema'
@@ -12,6 +12,4 @@ mongoose
     console.error('Connection error', e.message)
   })
 
-const db = mongoose.connection
-
-module.exports = db
+export const db = mongoose.connection
