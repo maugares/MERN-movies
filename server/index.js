@@ -18,6 +18,6 @@ app.get('/', (req, res) => {
   res.send('Hi Bernie. I am Mauro')
 })
 
-app.use('/api', movieRouter)
+app.use('/', movieRouter)
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
