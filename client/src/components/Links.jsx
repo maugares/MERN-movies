@@ -5,13 +5,13 @@ export default class Links extends Component {
   render () {
     return (
       <React.Fragment>
-        <Link to='/' className='navbar-brang'>
+        <Link to='/' className='navbar-brand'>
           My first MERN Application
         </Link>
-        <Link to='/' className='nav-link'>
-          Movies
+        <Link to='/movies/list' className='nav-link'>
+          Movies List
         </Link>
-        <Link to='/create' className='nav-link'>
+        <Link to='/movies/create' className='nav-link'>
           Create Movie
         </Link>
       </React.Fragment>
