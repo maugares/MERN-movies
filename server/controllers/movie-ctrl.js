@@ -35,7 +35,7 @@ export const createMovie = (req, res, err) => {
 }
 
 // cRud - Read / Get
-export const getMovie = async (req, res) => {
+export const getMovies = async (req, res) => {
   await Movie.find({}, (err, movies) => {
     if (err) {
       return res.status(400).json({ success: false, error: err })
