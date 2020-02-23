@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node -r esm index.js | pino-pretty -m message",
     "dev": "nodemon -r esm index.js | pino-pretty -m message",
     "test": "jest"
   },
