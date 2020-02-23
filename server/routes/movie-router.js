@@ -5,7 +5,7 @@ import { createMovie, getMovie, updateMovie, deleteMovie, getMovieById } from '.
 export const router = express.Router()
 
 router.post('/movie', createMovie)
-router.get('/movie', getMovie)
+router.get('/movies', getMovies)
 router.put('/movie/:id', updateMovie)
 router.delete('/movie/:id', deleteMovie)
 router.get('/movie/:id', getMovieById)
