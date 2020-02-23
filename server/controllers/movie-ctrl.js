@@ -1,5 +1,6 @@
 import Movie from '../models/movie-model'
 
+// Crud - Create
 export const createMovie = (req, res, err) => {
   const body = req.body
 
@@ -31,4 +32,17 @@ export const createMovie = (req, res, err) => {
         message: 'Movie not created!'
       })
     })
+}
+
+// cRud - Read
+export const readMovie = async (req, res) => {
+  await Movie.find({}, (err, movies) => {
+    if (err) {
+      return res.status(400).json({ success: false, error: err })
+    }
+    if (!movies.length) {
+      return res.status(404).json({ success: false, error: 'Movie not found' })
+    }
+    return res.status(200).json({ success: true, data: movies })
+  }).catch(err => console.log(err))
 }
